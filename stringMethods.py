@@ -32,3 +32,6 @@ print(f"Your name is digit {is_digit}")
 
 is_alpha = name.isalpha() #Checks if the name is alpha numeric 
 print(f"Your name is alpha numeric.The answer is {is_alpha}")
+
+replace_space_with_hiphon = name.replace(" " , "-") #The name explains the use of this method
+print(f"Final Name:{replace_space_with_hiphon}")

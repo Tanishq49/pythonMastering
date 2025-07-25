@@ -15,4 +15,7 @@ cpu_cost = 5000.234
 total_cost = monitor_cost+cpu_cost
 
 #Now using the format specifers..
+
+#Todo: Adding all the format specifier in this print statement
+#! If there is error on the github so dont push the code
 print(f"Your total bill is ${total_cost:<10,.2f}")

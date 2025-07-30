@@ -12,7 +12,7 @@ response = requests.get(url)
 
 # Handle response
 if response.status_code == 200:
-    data = response.json()
+    data = response.json() #Getting the json data from the response from the api
     location = data['location']['name']
     temp_c = data['current']['temp_c']
     condition = data['current']['condition']['text']

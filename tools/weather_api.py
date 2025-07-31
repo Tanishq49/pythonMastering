@@ -4,7 +4,7 @@ import requests
 api_key = "9cfdec8f3b12427aa90161004253007"
 city = input("Enter the name of your city:")
 
-# API endpoint
+# API endpoint - Adding the url for the api
 url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}"
 
 # Make request
@@ -26,4 +26,3 @@ if response.status_code == 200:
     print(f"🌬️ Wind: {wind_kph} kph")
 else:
     print("❌ Failed to fetch weather data:", response.status_code)
-

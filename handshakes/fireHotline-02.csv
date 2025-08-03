@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+7C:21:D8:36:18:AF, 2025-08-02 23:27:13, 2025-08-02 23:27:35, 11, 180, WPA2, CCMP, PSK, -77,       93,        7,   0.  0.  0.  0,  14, ULTRA-600_18AF, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+5C:35:48:4D:8A:96, 2025-08-02 23:27:20, 2025-08-02 23:27:35, -87,       73, 7C:21:D8:36:18:AF,ULTRA-600_18AF
+

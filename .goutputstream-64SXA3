@@ -1,0 +1,18 @@
+#Getters and setters in python
+
+class Person:
+	def __init__(self,name):
+		self.name = name
+	
+	#Using the getters..
+	@property
+	def edit(self):
+             print(f"Your new name is {self.name+'Noob'}")
+	
+	#Making an function to return the name
+	def value(self):
+		return self.name
+
+person1 = Person("Tanishq")
+print(person1.value())
+person1.editing_in_name

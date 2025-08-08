@@ -57,17 +57,19 @@ class Menu:
         self.burgerPrice = self.burgerPrice+amount
         self.hotDogPrice = self.hotDogPrice+amount
         
+    @property
+    def showPrices(self):
+        for name,price in self.__dict__.items():
+            tempName = name.split('Price')
+            mainName = tempName[0].split("_")
+            print(f"The price of {mainName[1]} is:{price}")
+        
 menu = Menu(1,5,4,2)
-print(f"The price of coffee is:${menu.coffeePrice}")
-print(f"The price of burger is:${menu.burgerPrice}")
-print(f"The price of pizza is:${menu.pizzaPrice}")
-print(f"The price of hotDog is:${menu.hotDogPrice}")
 
-#! menu.changePrices = int(input("How much price you want to increase/decrease in the items?:"))
+menu.showPrices
+
+menu.changePrices = int(input("How much price you want to increase/decrease in the items?:"))
 
 print(f"\n{Fore.GREEN}The menu after changing is:\n")
 
-for food,price in menu.__dict__.items():
-    tempName = food.split("Price")
-    mainName = tempName[0].split("_")
-    print(f"The price of {mainName[1]} is:{price}")
+menu.showPrices

@@ -5,6 +5,8 @@ init(autoreset=True)
 #Making the resurant menu using the classes
 #Items-Coffee,pizza,burger,hotDog
 
+#*NOTE: This is also an concept of the OOP (Object Orianted Programming)
+
 class Menu:
     def __init__(self,coffeePrice,pizzaPrice,burgerPrice,hotDogPrice):
         self._coffeePrice = coffeePrice
@@ -39,6 +41,21 @@ class Menu:
     @hotDogPrice.setter
     def hotDogPrice(self,newPrice):
         self._hotDogPrice = newPrice
+    
+    @property
+    def get_food_names(self):
+        return "coffee","pizza","burger","hotDog"
+    
+    @property
+    def changePrices(self):
+         return self._coffeePrice,self._burgerPrice,self._pizzaPrice,self._hotDogPrice     
+        
+    @changePrices.setter
+    def changePrices(self,amount):
+        self.coffeePrice =  self.coffeePrice+amount
+        self.pizzaPrice = self.pizzaPrice+amount
+        self.burgerPrice = self.burgerPrice+amount
+        self.hotDogPrice = self.hotDogPrice+amount
         
 menu = Menu(1,5,4,2)
 print(f"The price of coffee is:${menu.coffeePrice}")
@@ -46,15 +63,11 @@ print(f"The price of burger is:${menu.burgerPrice}")
 print(f"The price of pizza is:${menu.pizzaPrice}")
 print(f"The price of hotDog is:${menu.hotDogPrice}")
 
-#Increasing the price of the items by .5
-menu.coffeePrice =  menu.coffeePrice+0.5
-menu.pizzaPrice = menu.pizzaPrice+0.5
-menu.burgerPrice = menu.burgerPrice+0.5
-menu.hotDogPrice = menu.hotDogPrice+0.5
+#! menu.changePrices = int(input("How much price you want to increase/decrease in the items?:"))
 
 print(f"\n{Fore.GREEN}The menu after changing is:\n")
 
-print(f"The price of coffee is:${menu.coffeePrice}")
-print(f"The price of burger is:${menu.burgerPrice}")
-print(f"The price of pizza is:${menu.pizzaPrice}")
-print(f"The price of hotDog is:${menu.hotDogPrice}")
+for food,price in menu.__dict__.items():
+    tempName = food.split("Price")
+    mainName = tempName[0].split("_")
+    print(f"The price of {mainName[1]} is:{price}")
